@@ -17,6 +17,8 @@
 
   ![Screenshot 2024-01-14 174308](https://github.com/Janiya21/EW_User_Repo/assets/64014377/a1a0dc27-44a3-476b-b082-3bcd53e48080)
 
+  ![Screenshot 2024-01-14 180522](https://github.com/Janiya21/EW_User_Repo/assets/64014377/266ad3d5-ae08-4180-bb75-5dee9a03d6d4)
+
   ![Screenshot 2024-01-14 174409](https://github.com/Janiya21/EW_User_Repo/assets/64014377/439e4d5f-928a-4847-a6e6-cea626bccab0)
 
   ![Screenshot 2024-01-14 174438](https://github.com/Janiya21/EW_User_Repo/assets/64014377/a700e314-80da-4c54-a5c0-b2bfba40d668)
