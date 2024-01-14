@@ -14,6 +14,8 @@
   Preview
   
   ![Screenshot 2024-01-14 173241](https://github.com/Janiya21/EW_User_Repo/assets/64014377/b6f2c391-23f9-4c27-bb77-e0632400df14)
+  
+  ![Screenshot 2024-01-14 185544](https://github.com/Janiya21/EW_User_Repo/assets/64014377/705c714c-4404-4c85-a967-9d83a4571330)
 
   ![Screenshot 2024-01-14 174308](https://github.com/Janiya21/EW_User_Repo/assets/64014377/a1a0dc27-44a3-476b-b082-3bcd53e48080)
 
