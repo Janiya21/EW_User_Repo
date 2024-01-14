@@ -2,6 +2,10 @@ package com.java.userapi.controller;
 
 import com.java.userapi.entity.AuthRequest;
 import com.java.userapi.entity.AuthResponse;
+import com.java.userapi.entity.AuthUser;
+import com.java.userapi.entity.User;
+import com.java.userapi.service.AuthUserService;
+import com.java.userapi.service.UserService;
 import com.java.userapi.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class InitialController {
 
+    @Autowired
+    private AuthUserService userService;
     @Autowired
     private JwtUtil jwtUtil;
     @Autowired
@@ -33,5 +39,10 @@ public class InitialController {
             throw new Exception("Invalid username or Password");
         }
         return new AuthResponse(authRequest.getUsername(),jwtUtil.generateToken(authRequest.getUsername()));
+    }
+
+    @PostMapping("/addAuthUser")
+    public AuthUser saveUser(@RequestBody AuthUser user){
+        return userService.saveUser(user);
     }
 }

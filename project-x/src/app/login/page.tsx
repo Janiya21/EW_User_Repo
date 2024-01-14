@@ -4,6 +4,7 @@ import {Button, Chip, Input} from "@nextui-org/react";
 import Image from 'next/image';
 import TokenService from "@/app/token/TokenService";
 import { useRouter } from 'next/navigation';
+import Register from "@/app/register/page";
 
 export default function Login() {
     const router = useRouter();
@@ -72,7 +73,7 @@ export default function Login() {
                     <div className="col-span-1">
                         <div className="box h-72">
                             <div className="inner-box max-w-sm mx-auto mt-2">
-                                <h3 className={"mb-10"}>Don't have an Account ?<Chip color="warning" className={'ms-4 cursor-pointer'} variant="faded">Create</Chip></h3>
+                                <h3 className={"mb-10"}>Don't have an Account ?<Chip color="warning" className={'ms-4 cursor-pointer'} variant="faded"><Register/></Chip></h3>
                             </div>
                             <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-2">
                                 <div className="mb-5">
@@ -84,7 +85,7 @@ export default function Login() {
                                 <div className="flex items-start mt-12">
                                     <label htmlFor="remember" className="ms-2 mx-8 text-sm font-medium text-gray-900 dark:text-gray-300">Forgot Password ?</label>
                                     <div className="flex items-center h-5">
-                                        <button type="submit" className="relative w-52 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hiddentext-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-2xl text-sm px-5 py-2.5 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                                        <button type="submit" className="relative w-52 inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hiddentext-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-2xl text-sm px-5 py-2.5 dark:bg-yellow-500 dark:hover:bg-yellow-700 dark:focus:ring-gray-700 dark:border-gray-700">
                                             Log In
                                         </button>
                                     </div>
