@@ -2,7 +2,9 @@
 import React, {useEffect, useState} from "react";
 import Model from "@/app/model/page"
 import DialogComponent from "@/app/userDetail/page";
-import {Button,Code,User} from "@nextui-org/react";
+import {Button, Code, Image, User} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure} from "@nextui-org/react";
+import { useRouter } from 'next/navigation';
 
 interface UserDetail{
     "id": any;
@@ -20,8 +22,9 @@ interface User{
 }
 
 export default function App() {
-
+    const router = useRouter();
     const [openDialogs, setOpenDialogs] = useState([]);
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [data, setData] = useState<User[]>([]);
     const [username, setUsername] = useState('');
 
@@ -56,14 +59,16 @@ export default function App() {
 
         setOpenDialogs(newOpenDialogs);
     };
-    // https://nextui.org/gradients/docs-right.png
+
+    const logOut = () => {
+        router.push('/');
+    }
+
     // @ts-ignore
     return (
         <div className="relative overflow-x-auto px-28 py-20 shadow-md sm:rounded-lg bg-[url('https://nextui.org/gradients/docs-right.png')]" style={{height:'100vh'}}>
             <div className="flex justify-end">
                 <div className="flex mt-2">
-                    {/*<Chip color="warning" className={'border-0 pt-3'} variant="dot"><h1 className={'px-2'}>{username}</h1></Chip>
-                    <Avatar className={'float-end'} isBordered radius="sm" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />*/}
                     <User
                         name={username}
                         description="Adminastration"
@@ -71,6 +76,37 @@ export default function App() {
                             src: "https://i.pravatar.cc/150?u=a04258a2462d826712d"
                         }}
                     />
+                    <button onClick={onOpen} type="button" className="text-white focus:outline-none font-medium rounded-lg text-sm text-center inline-flex items-center me-2 ">
+                        <Image
+                            alt="Card background"
+                            className="object-cover ms-3 rounded-xl"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6QBT0bL5KyxZowZJiNzRTgg27h3o1JDi7HA&usqp=CAU"
+                            width={50}
+                        />
+                        <span className="sr-only">Icon description</span>
+                    </button>
+                    <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                        <ModalContent>
+                            {(onClose) => (
+                                <>
+                                    <ModalHeader className="flex flex-col gap-1">Log Out</ModalHeader>
+                                    <ModalBody>
+                                        <p>
+                                            Are you sure want to log-out ?
+                                        </p>
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Button color="danger" variant="light" onPress={onClose}>
+                                            No
+                                        </Button>
+                                        <Button color="primary" onPress={logOut}>
+                                            Yes
+                                        </Button>
+                                    </ModalFooter>
+                                </>
+                            )}
+                        </ModalContent>
+                    </Modal>
                 </div>
             </div>
             <div className="flex flex-col gap-4 my-6">
